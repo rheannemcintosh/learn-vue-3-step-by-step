@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <title>Episode 2: Attribute Binding and Basic Events</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: grid;
+            place-items: center;
+        }
+
+        .text-red {
+            color: red;
+        }
+
+        .text-green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button>Click Me</button>
+    </div>
+
+    <script>
+        Vue.createApp({}).mount('#app');
+    </script>
+</body>
+</html>
