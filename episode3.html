@@ -9,10 +9,13 @@
     </head>
     <body class="h-full grid place-items-center">
         <div id="app">
-            <section>
+            <section v-show="inProgressAssignments.length">
                 <h2 class="font-bold mb-2">In Progress</h2>
                 <ul>
-                    <li v-for="assignment in assignments.filter(a => ! a.complete)" :key="assignment.id">
+                    <li
+                        v-for="assignment in inProgressAssignments"
+                        :key="assignment.id"
+                    >
                         <label>
                             {{ assignment.name }}
                         </label>
@@ -22,14 +25,17 @@
 
 
             </section>
-            <section class="mt-8">
+            <section class="mt-8" v-show="completedAssignments.length">
                 <h2 class="font-bold mb-2">Completed</h2>
                 <ul>
-                    <li v-for="assignment in assignments">
+                    <li
+                        v-for="assignment in completedAssignments"
+                        :key="assignment.id"
+                    >
                         <label>
                             {{ assignment.name }}
                         </label>
-                        <input type="checkbox" v-model="assignment.filter(a => a.complete)" :key="assignment.id">
+                        <input type="checkbox" v-model="assignment.complete">
                     </li>
                 </ul>
             </section>
@@ -56,6 +62,16 @@
                                 id: 3,
                             },
                         ]
+                    }
+                },
+
+                computed: {
+                    inProgressAssignments() {
+                        return this.assignments.filter(assignment => !assignment.complete)
+                    },
+
+                    completedAssignments() {
+                        return this.assignments.filter(assignment => assignment.complete)
                     }
                 }
             };
