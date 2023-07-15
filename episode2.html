@@ -23,11 +23,23 @@
 </head>
 <body>
     <div id="app">
-        <button>Click Me</button>
+        <button v-bind:class="active ? 'text-red' : 'text-green'" v-on:click="toggle">Click Me</button>
     </div>
 
     <script>
-        Vue.createApp({}).mount('#app');
+        Vue.createApp({
+            data() {
+                return {
+                    active: false
+                };
+            },
+
+            methods: {
+                toggle() {
+                    this.active = !this.active;
+                }
+            }
+        }).mount('#app');
     </script>
 </body>
 </html>
