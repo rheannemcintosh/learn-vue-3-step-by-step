@@ -1,4 +1,4 @@
-import AssignmentList from "./AssignmentList";
+import AssignmentList from "./AssignmentList.js";
 
 export default {
     components: { AssignmentList },
