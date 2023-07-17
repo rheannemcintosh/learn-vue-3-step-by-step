@@ -1,10 +1,10 @@
 export default {
     template: `
-        <section v-show="inProgressAssignments.length">
-            <h2 class="font-bold mb-2">In Progress</h2>
+        <section v-show="assignments.length">
+            <h2 class="font-bold mb-2">{{ title }}</h2>
             <ul>
                 <li
-                    v-for="assignment in inProgressAssignments"
+                    v-for="assignment in assignments"
                     :key="assignment.id"
                 >
                     <label>
@@ -14,20 +14,10 @@ export default {
                 </li>
             </ul>
         </section>
-        
-        <section class="mt-8" v-show="completedAssignments.length">
-            <h2 class="font-bold mb-2">Completed</h2>
-            <ul>
-                <li
-                    v-for="assignment in completedAssignments"
-                    :key="assignment.id"
-                >
-                    <label>
-                        {{ assignment.name }}
-                    </label>
-                    <input type="checkbox" v-model="assignment.complete">
-                </li>
-            </ul>
-        </section>
     `,
+
+    props: {
+        assignments: Array,
+        title: String,
+    }
 }
