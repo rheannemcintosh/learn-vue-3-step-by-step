@@ -15,12 +15,7 @@ export default {
     },
     methods: {
         add() {
-            this.assignments.push({
-                name: this.newAssignment,
-                complete: false,
-                id: this.assignments.length + 1,
-            });
-
+            this.$emit('add', this.newAssignment);
             this.newAssignment = '';
         }
     }
