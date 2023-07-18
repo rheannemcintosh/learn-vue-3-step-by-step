@@ -9,11 +9,11 @@ export default {
                 <span>({{ assignments.length }}</span>
             </h2>
             
-            <div>
-                <button v-for="tag in tags">{{ $tag }}</button>
+            <div class="flex gap-2">
+                <button v-for="tag in tags" class=" border rounded px-1 py-px text-xs">{{ $tag }}</button>
             </div>
             
-            <ul class="border border-gray-600 divide-y divide-gray-600">
+            <ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
                 <assignment
                     v-for="assignment in assignments"
                     :key="assignment.id"
