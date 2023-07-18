@@ -9,6 +9,10 @@ export default {
                 <span>({{ assignments.length }}</span>
             </h2>
             
+            <div>
+                <button v-for="tag in tags">{{ $tag }}</button>
+            </div>
+            
             <ul class="border border-gray-600 divide-y divide-gray-600">
                 <assignment
                     v-for="assignment in assignments"
@@ -23,5 +27,11 @@ export default {
     props: {
         assignments: Array,
         title: String,
+    },
+
+    computed: {
+        tags() {
+            return ['science', 'math', 'reading']
+        }
     }
 }
