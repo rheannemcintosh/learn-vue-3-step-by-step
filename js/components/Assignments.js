@@ -16,16 +16,19 @@ export default {
                 {
                     name: 'Finish Project',
                     complete: false,
+                    tag: 'math',
                     id: 1,
                 },
                 {
                     name: 'Read Chapter 4',
                     complete: false,
+                    tag: 'science',
                     id: 2,
                 },
                 {
                     name: 'Turn In Homework',
                     complete: false,
+                    tag: 'math',
                     id: 3,
                 },
             ],
