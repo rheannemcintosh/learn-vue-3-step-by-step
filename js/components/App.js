@@ -28,6 +28,17 @@ export default {
                     Click Here to Learn More
                 </template>
             </panel>
+            <panel theme="light">
+                <template v-slot:heading>
+                    Hi I have a footer
+                </template>
+                
+                This is my default content
+                
+                <template v-slot:footer>
+                    Click Here to Learn More
+                </template>
+            </panel>
         </div>
     `,
 }
