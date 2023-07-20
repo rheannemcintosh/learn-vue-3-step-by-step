@@ -7,7 +7,13 @@ export default {
     template: `
         <div class="grid gap-6">
             <assignments></assignments>
-            <panel>Hello Again</panel>
+            <panel>
+                <template v-slot:heading>
+                    Hi there
+                </template>
+                
+                This is my default content
+            </panel>
         </div>
     `,
 }
